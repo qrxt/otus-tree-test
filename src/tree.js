@@ -1,8 +1,8 @@
 const getTreeNodes = (node) => {
   const inner = (
     node,
-    prefix = ' ',
-    isLast = true
+    prefix,
+    isLast
   ) => {
     const offsetSymbol = isLast ? '└──' : '├──';
 
@@ -19,7 +19,7 @@ const getTreeNodes = (node) => {
     }, [currentLine]);
   }
 
-  return inner(node, '');
+  return inner(node, '', true);
 };
 
 const printTree = (node) => {
