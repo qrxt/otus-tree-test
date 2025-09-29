@@ -4,6 +4,8 @@ const getTreeNodes = (node) => {
     prefix,
     isLast
   ) => {
+    if (!node.name) return [];
+
     const offsetSymbol = isLast ? '└──' : '├──';
 
     const currentLine = `${prefix}${offsetSymbol} ${node.name}`;
